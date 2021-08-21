@@ -13,7 +13,7 @@ NSString * GHAbsoluteServicePath(GHBackendService service) {
     
     switch (service) {
         case GHBackendServiceFetchCommits: {
-            return nil;
+            return [NSString stringWithFormat:@"https://api.github.com/repos/Nagraj-Sidh/%@/commits?page=%s&per_page=%s", @"%@","%@","%@"];
         }
         case GHBackendServiceFetchRepositories: {
             return [NSString stringWithFormat:@"https://api.github.com/users/Nagraj-Sidh/repos"];

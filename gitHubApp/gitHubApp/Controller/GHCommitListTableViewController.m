@@ -15,6 +15,7 @@
 
 @interface GHCommitListTableViewController ()
 
+// Holds list of all the commits
 @property (nonatomic, strong) NSArray <GHCommit *> * commits;
 
 // Holds the reference of service manager
@@ -87,7 +88,6 @@
     return cell;
 }
 
-
 #pragma mark -
 
 - (void)setUpNavigationBar {
@@ -102,7 +102,24 @@
 }
 
 - (void)fetchCommitList {
-
+    [self.activityViewIndicator startAnimating];
+    self.fetchingCommitList = YES;
+    __weak GHCommitListTableViewController * weakSelf = self;
+    
+    // Fetch the most recent commits to the repository
+    [self.serviceManager fetchCommitsForRepository:self.repositoryName page:@1 perPage:@kDefaultPerPageCount withCompletionBlock:^(NSArray * _Nonnull results, NSError * _Nonnull error) {
+        __strong GHCommitListTableViewController * strongSelf = weakSelf;
+        [strongSelf.activityViewIndicator stopAnimating];
+        strongSelf.fetchingCommitList = NO;
+        
+        if (error) {
+            if ([results count] > 0) {
+                strongSelf.commits = results;
+            }
+        }
+        
+        [strongSelf.tableView reloadData];
+    }];
 }
 
 @end
