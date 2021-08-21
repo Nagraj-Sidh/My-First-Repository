@@ -7,6 +7,7 @@
 
 #import <XCTest/XCTest.h>
 #import "GHRepository.h"
+#import "GHCommit.h"
 
 @interface gitHubAppTests : XCTestCase
 
@@ -55,6 +56,24 @@
         GHRepository * repository = [[GHRepository alloc] initWithDictionary:eachRepository];
         XCTAssertEqualObjects(repository.name, name, @"Failure: The repository name is not matching, Expected: The repository name is matching");
         XCTAssertEqualObjects(repository.identifier, identifier, @"Failure: The repository id is not matching, Expected: The repository id is matching");
+    }
+}
+
+// Test case to ensure the GHCommit model object is getting initialized and properties are updated correctly with json dictionary
+- (void)testGHCommitModeInitialization {
+    id jsonObject = [self JSONForResourceFile:@"testCommits"];
+    NSArray * commitList = jsonObject;
+    
+    XCTAssertTrue(commitList.count == 3, "Incorrect commit list count");
+
+    for (NSDictionary * eachCommitDictionary in commitList) {
+        NSString * commitHash = [eachCommitDictionary objectForKey:@"sha"];
+        NSString * commitMessage = [[eachCommitDictionary objectForKey:@"commit"] objectForKey:@"message"];
+        NSString * commitAuthor = [[[eachCommitDictionary objectForKey:@"commit"] objectForKey:@"author"] objectForKey:@"name"];
+        GHCommit * commit = [[GHCommit alloc] initWithDictionary:eachCommitDictionary];
+        XCTAssertEqualObjects(commit.hashIdentifier, commitHash, @"Failure: The commit hash is not matching, Expected: The commit hash is matching");
+        XCTAssertEqualObjects(commit.author, commitAuthor, @"Failure: The commit author is not matching, Expected: The commit author is matching");
+        XCTAssertEqualObjects(commit.message, commitMessage, @"Failure: The commit message is not matching, Expected: The commit message is matching");
     }
 }
 
