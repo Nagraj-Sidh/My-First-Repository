@@ -43,7 +43,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellIdentifier" rowHeight="90" id="UlZ-DT-sSb" customClass="GHCommitTableViewCell">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="cellIdentifier" rowHeight="90" id="UlZ-DT-sSb" customClass="GHCommitTableViewCell">
                                 <rect key="frame" x="20" y="55.5" width="374" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UlZ-DT-sSb" id="eb6-LV-mu5">
@@ -51,36 +51,41 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" text="author" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m5v-yT-042">
-                                            <rect key="frame" x="25" y="60" width="324" height="14"/>
+                                            <rect key="frame" x="25" y="63" width="324" height="11"/>
                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                             <color key="textColor" systemColor="systemBlueColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="commitHash" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1cv-YZ-ch0">
-                                            <rect key="frame" x="25" y="32" width="324" height="23"/>
+                                            <rect key="frame" x="25" y="35" width="324" height="25"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="commitMessage" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VU9-Wt-OeS">
-                                            <rect key="frame" x="25" y="11" width="324" height="18"/>
+                                            <rect key="frame" x="25" y="14" width="324" height="18"/>
                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="VU9-Wt-OeS" firstAttribute="leading" secondItem="eb6-LV-mu5" secondAttribute="leadingMargin" constant="5" id="32I-8N-q6k"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="m5v-yT-042" secondAttribute="trailing" constant="5" id="4GQ-Pk-5lB"/>
                                         <constraint firstItem="1cv-YZ-ch0" firstAttribute="top" secondItem="VU9-Wt-OeS" secondAttribute="bottom" constant="3" id="8Yg-1k-9my"/>
-                                        <constraint firstItem="m5v-yT-042" firstAttribute="top" secondItem="1cv-YZ-ch0" secondAttribute="bottom" constant="5" id="9Li-jf-wJN"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="m5v-yT-042" secondAttribute="trailing" constant="5" id="AIt-w3-wvn"/>
+                                        <constraint firstItem="m5v-yT-042" firstAttribute="leading" secondItem="eb6-LV-mu5" secondAttribute="leadingMargin" constant="5" id="EYk-tB-6VJ"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="VU9-Wt-OeS" secondAttribute="trailing" constant="5" id="GEi-7G-aJr"/>
                                         <constraint firstItem="m5v-yT-042" firstAttribute="leading" secondItem="eb6-LV-mu5" secondAttribute="leadingMargin" constant="5" id="JOS-5V-jc5"/>
                                         <constraint firstItem="1cv-YZ-ch0" firstAttribute="leading" secondItem="eb6-LV-mu5" secondAttribute="leadingMargin" constant="5" id="Mje-We-103"/>
-                                        <constraint firstItem="VU9-Wt-OeS" firstAttribute="top" secondItem="eb6-LV-mu5" secondAttribute="top" constant="11" id="Ns3-hI-hh9"/>
-                                        <constraint firstItem="m5v-yT-042" firstAttribute="top" secondItem="1cv-YZ-ch0" secondAttribute="bottom" constant="5" id="SUQ-LN-2v9"/>
+                                        <constraint firstItem="m5v-yT-042" firstAttribute="top" secondItem="1cv-YZ-ch0" secondAttribute="bottom" constant="3" id="Xgk-Sc-Abz"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="m5v-yT-042" secondAttribute="bottom" constant="5" id="YY3-3d-Yvh"/>
                                         <constraint firstItem="m5v-yT-042" firstAttribute="top" secondItem="VU9-Wt-OeS" secondAttribute="bottom" constant="31" id="aHW-RX-S9d"/>
+                                        <constraint firstItem="VU9-Wt-OeS" firstAttribute="top" secondItem="eb6-LV-mu5" secondAttribute="topMargin" constant="3" id="bcz-83-13J"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="1cv-YZ-ch0" secondAttribute="trailing" constant="5" id="d10-LR-TII"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="m5v-yT-042" secondAttribute="bottom" constant="5" id="fkh-s4-BDL"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="m5v-yT-042" secondAttribute="bottom" constant="5" id="rIp-cy-o69"/>
                                         <constraint firstItem="VU9-Wt-OeS" firstAttribute="leading" secondItem="eb6-LV-mu5" secondAttribute="leading" constant="25" id="vLC-cD-5Hj"/>
                                         <constraint firstAttribute="trailing" secondItem="VU9-Wt-OeS" secondAttribute="trailing" constant="25" id="wI0-HT-E4l"/>
                                     </constraints>
