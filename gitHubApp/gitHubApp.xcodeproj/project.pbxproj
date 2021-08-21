@@ -19,6 +19,7 @@
 		8F73710A26D0C6DF003B3A43 /* GHRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F73710926D0C6DF003B3A43 /* GHRepository.m */; };
 		8F73711826D0CA9F003B3A43 /* testRepository.json in Resources */ = {isa = PBXBuildFile; fileRef = 8F73711726D0CA9F003B3A43 /* testRepository.json */; };
 		8F73711F26D0CC78003B3A43 /* GHServicePath.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F73711E26D0CC78003B3A43 /* GHServicePath.m */; };
+		8F73713C26D0CDF9003B3A43 /* GHServiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F73713B26D0CDF9003B3A43 /* GHServiceManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,8 @@
 		8F73711726D0CA9F003B3A43 /* testRepository.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = testRepository.json; sourceTree = "<group>"; };
 		8F73711D26D0CC78003B3A43 /* GHServicePath.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GHServicePath.h; sourceTree = "<group>"; };
 		8F73711E26D0CC78003B3A43 /* GHServicePath.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GHServicePath.m; sourceTree = "<group>"; };
+		8F73713A26D0CDF9003B3A43 /* GHServiceManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GHServiceManager.h; sourceTree = "<group>"; };
+		8F73713B26D0CDF9003B3A43 /* GHServiceManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GHServiceManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +189,8 @@
 			children = (
 				8F73711D26D0CC78003B3A43 /* GHServicePath.h */,
 				8F73711E26D0CC78003B3A43 /* GHServicePath.m */,
+				8F73713A26D0CDF9003B3A43 /* GHServiceManager.h */,
+				8F73713B26D0CDF9003B3A43 /* GHServiceManager.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -322,6 +327,7 @@
 			files = (
 				8F73710A26D0C6DF003B3A43 /* GHRepository.m in Sources */,
 				8F7370D426D0C43F003B3A43 /* ViewController.m in Sources */,
+				8F73713C26D0CDF9003B3A43 /* GHServiceManager.m in Sources */,
 				8F7370CE26D0C43F003B3A43 /* AppDelegate.m in Sources */,
 				8F7370DF26D0C441003B3A43 /* main.m in Sources */,
 				8F7370D126D0C43F003B3A43 /* SceneDelegate.m in Sources */,

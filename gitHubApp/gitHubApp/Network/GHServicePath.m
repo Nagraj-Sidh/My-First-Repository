@@ -7,6 +7,8 @@
 
 #import "GHServicePath.h"
 
+@implementation GHServicePath
+
 NSString * GHAbsoluteServicePath(GHBackendService service) {
     
     switch (service) {
@@ -20,3 +22,5 @@ NSString * GHAbsoluteServicePath(GHBackendService service) {
             return nil;
     }
 }
+
+@end

@@ -7,6 +7,8 @@
 
 #import <Foundation/Foundation.h>
 
+@interface GHServicePath : NSObject
+
 typedef NS_ENUM (NSInteger, GHBackendService) {
     GHBackendServiceNone = 0,
     GHBackendServiceFetchCommits,
@@ -15,5 +17,7 @@ typedef NS_ENUM (NSInteger, GHBackendService) {
 
 /// Returns the absolute path of service passed as input param
 NSString * __nullable GHAbsoluteServicePath(GHBackendService service);
+
+@end
 
 
