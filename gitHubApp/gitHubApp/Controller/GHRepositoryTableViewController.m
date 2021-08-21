@@ -6,6 +6,7 @@
 //
 
 #import "GHRepositoryTableViewController.h"
+#import "GHCommitListTableViewController.h"
 #import "GHRepository.h"
 #import "GHServiceManager.h"
 
@@ -86,6 +87,14 @@
     
     cell.textLabel.text = @"Recent commits";
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    GHRepository * eachRepository = [self.repositories objectAtIndex:indexPath.section];
+    UIStoryboard * storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    GHCommitListTableViewController * commitListTableViewController = (GHCommitListTableViewController *)[storyboard instantiateViewControllerWithIdentifier:@"commitListControllerSegue"];
+    commitListTableViewController.repositoryName = eachRepository.name;
+    [self.navigationController pushViewController:commitListTableViewController animated:YES];
 }
 
 #pragma mark -

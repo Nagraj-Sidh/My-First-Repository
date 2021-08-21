@@ -51,7 +51,7 @@
 
 #pragma mark  Retrieve commits
 
-- (void)retrieveCommitsForRepository:(NSString *)repositoryName page:(NSNumber *)page perPage:(NSNumber *)perPage withCompletionBlock:(void(^)(NSArray * results, NSError * error))completionBlock {
+- (void)fetchCommitsForRepository:(NSString *)repositoryName page:(NSNumber *)page perPage:(NSNumber *)perPage withCompletionBlock:(void(^)(NSArray * results, NSError * error))completionBlock {
     NSString * urlString = [NSString stringWithFormat:GHAbsoluteServicePath(GHBackendServiceFetchCommits),repositoryName, page, perPage];
 
     NSURL * dataURL = [NSURL URLWithString:urlString];
