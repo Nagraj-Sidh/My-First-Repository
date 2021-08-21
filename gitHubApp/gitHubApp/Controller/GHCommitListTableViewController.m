@@ -72,7 +72,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString * const cellIdentifier = @"cell";
+    static NSString * const cellIdentifier = @"cellIdentifier";
     GHCommitTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
@@ -112,7 +112,7 @@
         [strongSelf.activityViewIndicator stopAnimating];
         strongSelf.fetchingCommitList = NO;
         
-        if (error) {
+        if (!error) {
             if ([results count] > 0) {
                 strongSelf.commits = results;
             }

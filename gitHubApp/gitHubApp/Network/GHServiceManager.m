@@ -49,7 +49,7 @@
     [dataTask resume];
 }
 
-#pragma mark  Retrieve commits
+#pragma mark  Fetch commits
 
 - (void)fetchCommitsForRepository:(NSString *)repositoryName page:(NSNumber *)page perPage:(NSNumber *)perPage withCompletionBlock:(void(^)(NSArray * results, NSError * error))completionBlock {
     NSString * urlString = [NSString stringWithFormat:GHAbsoluteServicePath(GHBackendServiceFetchCommits),repositoryName, page, perPage];
@@ -89,7 +89,7 @@
 
 #pragma mark  Model methods
 
-- (NSArray <GHRepository *>*)repositoryFromJson:(NSArray *)jsonData {
+- (NSArray <GHRepository *> *)repositoryFromJson:(NSArray *)jsonData {
     NSMutableArray * repositoryList = [NSMutableArray array];
     
     for (NSDictionary * eachRepository in jsonData) {
@@ -100,7 +100,7 @@
     return [repositoryList copy];
 }
 
-- (NSArray <GHCommit *>*)commitsFromJson:(NSArray *)jsonData {
+- (NSArray <GHCommit *> *)commitsFromJson:(NSArray *)jsonData {
     NSMutableArray * commitList = [NSMutableArray array];
     
         for (NSDictionary * eachCommit in jsonData) {
