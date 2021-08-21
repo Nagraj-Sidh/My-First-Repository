@@ -31,6 +31,8 @@
 
 @implementation GHCommitListTableViewController
 
+#pragma mark - Designated Initializer
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -88,7 +90,7 @@
     return cell;
 }
 
-#pragma mark -
+#pragma mark - Custom methods
 
 - (void)setUpNavigationBar {
     self.navigationItem.title = @"Commits";
@@ -125,6 +127,8 @@
         [strongSelf.tableView reloadData];
     }];
 }
+
+#pragma mark - Alert
 
 - (void)displayError:(NSError *)error {
     UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Error"

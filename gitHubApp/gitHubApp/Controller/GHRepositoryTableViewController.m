@@ -31,6 +31,8 @@
 
 @implementation GHRepositoryTableViewController
 
+#pragma mark - Designated Initializer
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -97,7 +99,7 @@
     [self.navigationController pushViewController:commitListTableViewController animated:YES];
 }
 
-#pragma mark -
+#pragma mark - Custom methods
 
 - (void)setUpNavigationBar {
     self.navigationItem.title = @"Repositories";
@@ -132,6 +134,8 @@
         [strongSelf.tableView reloadData];
     }];
 }
+
+#pragma mark - Alert
 
 - (void)displayError:(NSError *)error {
     UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Error"
