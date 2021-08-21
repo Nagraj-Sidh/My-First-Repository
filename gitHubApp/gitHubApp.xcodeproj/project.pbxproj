@@ -22,6 +22,7 @@
 		8F73713C26D0CDF9003B3A43 /* GHServiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F73713B26D0CDF9003B3A43 /* GHServiceManager.m */; };
 		8F73714226D0D0EA003B3A43 /* GHRepositoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F73714126D0D0EA003B3A43 /* GHRepositoryTableViewController.m */; };
 		8F73714826D0D552003B3A43 /* GHCommit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F73714726D0D552003B3A43 /* GHCommit.m */; };
+		8F73714D26D0D648003B3A43 /* testCommits.json in Resources */ = {isa = PBXBuildFile; fileRef = 8F73714C26D0D648003B3A43 /* testCommits.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		8F73714126D0D0EA003B3A43 /* GHRepositoryTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GHRepositoryTableViewController.m; sourceTree = "<group>"; };
 		8F73714626D0D552003B3A43 /* GHCommit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GHCommit.h; sourceTree = "<group>"; };
 		8F73714726D0D552003B3A43 /* GHCommit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GHCommit.m; sourceTree = "<group>"; };
+		8F73714C26D0D648003B3A43 /* testCommits.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = testCommits.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +191,7 @@
 		8F73711626D0CA82003B3A43 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				8F73714C26D0D648003B3A43 /* testCommits.json */,
 				8F73711726D0CA9F003B3A43 /* testRepository.json */,
 			);
 			path = Data;
@@ -307,6 +310,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F73714D26D0D648003B3A43 /* testCommits.json in Resources */,
 				8F7370DC26D0C441003B3A43 /* LaunchScreen.storyboard in Resources */,
 				8F7370D926D0C441003B3A43 /* Assets.xcassets in Resources */,
 				8F7370D726D0C43F003B3A43 /* Main.storyboard in Resources */,
