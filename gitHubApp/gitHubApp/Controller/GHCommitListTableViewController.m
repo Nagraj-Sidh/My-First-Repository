@@ -40,7 +40,10 @@
     self.serviceManager = [[GHServiceManager alloc] init];
     [self setUpNavigationBar];
     [self setUpActivityIndicator];
-    [self fetchCommitList];
+    
+    if (self.repositoryName.length > 0) {
+        [self fetchCommitList];
+    }
 }
 
 #pragma mark - Table view data source
