@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 // Fetch all the repositories
 - (void)fetchRepositoryWithCompletionBlock:(void(^)(NSArray * results, NSError * error))completionBlock;
 
-// Fetch most recent commits(25) done in a repsitory
+// Fetch most recent commits(25) in a repsitory
 - (void)fetchCommitsForRepository:(NSString *)repositoryName page:(NSNumber *)page perPage:(NSNumber *)perPage withCompletionBlock:(void(^)(NSArray * results, NSError * error))completionBlock;
 
 @end

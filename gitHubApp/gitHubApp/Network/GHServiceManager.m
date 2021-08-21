@@ -16,7 +16,6 @@
 
 - (void)fetchRepositoryWithCompletionBlock:(void(^)(NSArray * results, NSError * error))completionBlock {
     NSString * urlString = [NSString stringWithFormat:@"%@", GHAbsoluteServicePath(GHBackendServiceFetchRepositories)];
-    
     NSURL * dataURL = [NSURL URLWithString:urlString];
     NSURLRequest * request = [NSURLRequest requestWithURL:dataURL];
     NSURLSession * urlSession = [NSURLSession sharedSession];
@@ -53,7 +52,6 @@
 
 - (void)fetchCommitsForRepository:(NSString *)repositoryName page:(NSNumber *)page perPage:(NSNumber *)perPage withCompletionBlock:(void(^)(NSArray * results, NSError * error))completionBlock {
     NSString * urlString = [NSString stringWithFormat:GHAbsoluteServicePath(GHBackendServiceFetchCommits),repositoryName, page, perPage];
-
     NSURL * dataURL = [NSURL URLWithString:urlString];
     NSURLRequest * request = [NSURLRequest requestWithURL:dataURL];
     NSURLSession * urlSession = [NSURLSession sharedSession];

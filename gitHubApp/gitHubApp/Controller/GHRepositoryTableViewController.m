@@ -40,9 +40,6 @@
     [self setUpNavigationBar];
     [self setUpActivityIndicator];
     [self fetchRepositoryList];
-    
-    self.tableView.estimatedRowHeight = self.tableView.rowHeight;
-    self.tableView.rowHeight = UITableViewAutomaticDimension;
 }
 
 #pragma mark - Table view data source
