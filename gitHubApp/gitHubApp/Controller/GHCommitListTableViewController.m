@@ -11,6 +11,7 @@
 #import "GHCommitTableViewCell.h"
 
 #define kDefaultNumberOfSections        0
+#define kDefaultNumberOfRows            1
 #define kDefaultPerPageCount            25
 
 @interface GHCommitListTableViewController ()
@@ -68,7 +69,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+    return kDefaultNumberOfRows;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

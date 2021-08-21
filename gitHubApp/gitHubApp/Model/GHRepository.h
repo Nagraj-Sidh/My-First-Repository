@@ -11,13 +11,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface GHRepository : NSObject
 
-/// Specifies id of the repository
+// Specifies id of the repository
 @property (nonatomic, strong) NSString * identifier;
 
-/// Specifies name of the repository
+// Specifies name of the repository
 @property (nonatomic, strong) NSString * name;
 
-/// Init Method
+// Init Method
 - (id)initWithDictionary:(NSDictionary *)dictionary;
 
 @end
