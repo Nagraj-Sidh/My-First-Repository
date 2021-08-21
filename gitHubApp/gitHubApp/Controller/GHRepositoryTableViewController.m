@@ -120,7 +120,10 @@
         [strongSelf.activityViewIndicator stopAnimating];
         strongSelf.fetchingRepositories = NO;
         
-        if (!error) {
+        if (error) {
+            [strongSelf displayError:error];
+        }
+        else {
             if ([results count] > 0) {
                 strongSelf.repositories = results;
             }
@@ -128,6 +131,17 @@
         
         [strongSelf.tableView reloadData];
     }];
+}
+
+- (void)displayError:(NSError *)error {
+    UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Error"
+                                                                    message:error.localizedDescription
+                                                             preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction * defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action) {}];
+    [alert addAction:defaultAction];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 @end
