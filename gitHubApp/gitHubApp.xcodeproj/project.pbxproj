@@ -16,6 +16,7 @@
 		8F7370DF26D0C441003B3A43 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7370DE26D0C441003B3A43 /* main.m */; };
 		8F7370E926D0C442003B3A43 /* gitHubAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7370E826D0C442003B3A43 /* gitHubAppTests.m */; };
 		8F7370F426D0C442003B3A43 /* gitHubAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7370F326D0C442003B3A43 /* gitHubAppUITests.m */; };
+		8F73710A26D0C6DF003B3A43 /* GHRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F73710926D0C6DF003B3A43 /* GHRepository.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		8F7370EF26D0C442003B3A43 /* gitHubAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = gitHubAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F7370F326D0C442003B3A43 /* gitHubAppUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = gitHubAppUITests.m; sourceTree = "<group>"; };
 		8F7370F526D0C442003B3A43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8F73710826D0C6DF003B3A43 /* GHRepository.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GHRepository.h; sourceTree = "<group>"; };
+		8F73710926D0C6DF003B3A43 /* GHRepository.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GHRepository.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +147,8 @@
 		8F73710426D0C5C0003B3A43 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8F73710826D0C6DF003B3A43 /* GHRepository.h */,
+				8F73710926D0C6DF003B3A43 /* GHRepository.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -298,6 +303,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F73710A26D0C6DF003B3A43 /* GHRepository.m in Sources */,
 				8F7370D426D0C43F003B3A43 /* ViewController.m in Sources */,
 				8F7370CE26D0C43F003B3A43 /* AppDelegate.m in Sources */,
 				8F7370DF26D0C441003B3A43 /* main.m in Sources */,
