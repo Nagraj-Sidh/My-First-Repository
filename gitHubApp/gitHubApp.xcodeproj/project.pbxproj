@@ -21,6 +21,7 @@
 		8F73711F26D0CC78003B3A43 /* GHServicePath.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F73711E26D0CC78003B3A43 /* GHServicePath.m */; };
 		8F73713C26D0CDF9003B3A43 /* GHServiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F73713B26D0CDF9003B3A43 /* GHServiceManager.m */; };
 		8F73714226D0D0EA003B3A43 /* GHRepositoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F73714126D0D0EA003B3A43 /* GHRepositoryTableViewController.m */; };
+		8F73714826D0D552003B3A43 /* GHCommit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F73714726D0D552003B3A43 /* GHCommit.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,8 @@
 		8F73713B26D0CDF9003B3A43 /* GHServiceManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GHServiceManager.m; sourceTree = "<group>"; };
 		8F73714026D0D0EA003B3A43 /* GHRepositoryTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GHRepositoryTableViewController.h; sourceTree = "<group>"; };
 		8F73714126D0D0EA003B3A43 /* GHRepositoryTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GHRepositoryTableViewController.m; sourceTree = "<group>"; };
+		8F73714626D0D552003B3A43 /* GHCommit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GHCommit.h; sourceTree = "<group>"; };
+		8F73714726D0D552003B3A43 /* GHCommit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GHCommit.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +164,8 @@
 			children = (
 				8F73710826D0C6DF003B3A43 /* GHRepository.h */,
 				8F73710926D0C6DF003B3A43 /* GHRepository.m */,
+				8F73714626D0D552003B3A43 /* GHCommit.h */,
+				8F73714726D0D552003B3A43 /* GHCommit.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -330,6 +335,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F73714826D0D552003B3A43 /* GHCommit.m in Sources */,
 				8F73710A26D0C6DF003B3A43 /* GHRepository.m in Sources */,
 				8F7370D426D0C43F003B3A43 /* ViewController.m in Sources */,
 				8F73713C26D0CDF9003B3A43 /* GHServiceManager.m in Sources */,
