@@ -23,6 +23,8 @@
 		8F73714226D0D0EA003B3A43 /* GHRepositoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F73714126D0D0EA003B3A43 /* GHRepositoryTableViewController.m */; };
 		8F73714826D0D552003B3A43 /* GHCommit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F73714726D0D552003B3A43 /* GHCommit.m */; };
 		8F73714D26D0D648003B3A43 /* testCommits.json in Resources */ = {isa = PBXBuildFile; fileRef = 8F73714C26D0D648003B3A43 /* testCommits.json */; };
+		8F73715326D0D7A1003B3A43 /* GHCommitListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F73715226D0D7A1003B3A43 /* GHCommitListTableViewController.m */; };
+		8F73715926D0D7E1003B3A43 /* GHCommitTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F73715826D0D7E1003B3A43 /* GHCommitTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,10 @@
 		8F73714626D0D552003B3A43 /* GHCommit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GHCommit.h; sourceTree = "<group>"; };
 		8F73714726D0D552003B3A43 /* GHCommit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GHCommit.m; sourceTree = "<group>"; };
 		8F73714C26D0D648003B3A43 /* testCommits.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = testCommits.json; sourceTree = "<group>"; };
+		8F73715126D0D7A1003B3A43 /* GHCommitListTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GHCommitListTableViewController.h; sourceTree = "<group>"; };
+		8F73715226D0D7A1003B3A43 /* GHCommitListTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GHCommitListTableViewController.m; sourceTree = "<group>"; };
+		8F73715726D0D7E1003B3A43 /* GHCommitTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GHCommitTableViewCell.h; sourceTree = "<group>"; };
+		8F73715826D0D7E1003B3A43 /* GHCommitTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GHCommitTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +181,8 @@
 		8F73711426D0CA5F003B3A43 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8F73715726D0D7E1003B3A43 /* GHCommitTableViewCell.h */,
+				8F73715826D0D7E1003B3A43 /* GHCommitTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -184,6 +192,8 @@
 			children = (
 				8F73714026D0D0EA003B3A43 /* GHRepositoryTableViewController.h */,
 				8F73714126D0D0EA003B3A43 /* GHRepositoryTableViewController.m */,
+				8F73715126D0D7A1003B3A43 /* GHCommitListTableViewController.h */,
+				8F73715226D0D7A1003B3A43 /* GHCommitListTableViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -340,10 +350,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F73714826D0D552003B3A43 /* GHCommit.m in Sources */,
+				8F73715326D0D7A1003B3A43 /* GHCommitListTableViewController.m in Sources */,
 				8F73710A26D0C6DF003B3A43 /* GHRepository.m in Sources */,
 				8F7370D426D0C43F003B3A43 /* ViewController.m in Sources */,
 				8F73713C26D0CDF9003B3A43 /* GHServiceManager.m in Sources */,
 				8F7370CE26D0C43F003B3A43 /* AppDelegate.m in Sources */,
+				8F73715926D0D7E1003B3A43 /* GHCommitTableViewCell.m in Sources */,
 				8F7370DF26D0C441003B3A43 /* main.m in Sources */,
 				8F7370D126D0C43F003B3A43 /* SceneDelegate.m in Sources */,
 				8F73714226D0D0EA003B3A43 /* GHRepositoryTableViewController.m in Sources */,
