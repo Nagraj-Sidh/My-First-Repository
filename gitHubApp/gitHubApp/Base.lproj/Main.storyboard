@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -34,6 +35,73 @@
             </objects>
             <point key="canvasLocation" x="1694.2028985507247" y="93.75"/>
         </scene>
+        <!--Commit List Table View Controller-->
+        <scene sceneID="LNL-OH-J5r">
+            <objects>
+                <tableViewController storyboardIdentifier="commitListControllerSegue" id="EM1-H8-szd" customClass="GHCommitListTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="Oai-0F-LB3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellIdentifier" rowHeight="90" id="UlZ-DT-sSb" customClass="GHCommitTableViewCell">
+                                <rect key="frame" x="20" y="55.5" width="374" height="90"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UlZ-DT-sSb" id="eb6-LV-mu5">
+                                    <rect key="frame" x="0.0" y="0.0" width="374" height="90"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" text="author" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m5v-yT-042">
+                                            <rect key="frame" x="25" y="60" width="324" height="14"/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                            <color key="textColor" systemColor="systemBlueColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="commitHash" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1cv-YZ-ch0">
+                                            <rect key="frame" x="25" y="32" width="324" height="23"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="commitMessage" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VU9-Wt-OeS">
+                                            <rect key="frame" x="25" y="11" width="324" height="18"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="m5v-yT-042" secondAttribute="trailing" constant="5" id="4GQ-Pk-5lB"/>
+                                        <constraint firstItem="1cv-YZ-ch0" firstAttribute="top" secondItem="VU9-Wt-OeS" secondAttribute="bottom" constant="3" id="8Yg-1k-9my"/>
+                                        <constraint firstItem="m5v-yT-042" firstAttribute="top" secondItem="1cv-YZ-ch0" secondAttribute="bottom" constant="5" id="9Li-jf-wJN"/>
+                                        <constraint firstItem="m5v-yT-042" firstAttribute="leading" secondItem="eb6-LV-mu5" secondAttribute="leadingMargin" constant="5" id="JOS-5V-jc5"/>
+                                        <constraint firstItem="1cv-YZ-ch0" firstAttribute="leading" secondItem="eb6-LV-mu5" secondAttribute="leadingMargin" constant="5" id="Mje-We-103"/>
+                                        <constraint firstItem="VU9-Wt-OeS" firstAttribute="top" secondItem="eb6-LV-mu5" secondAttribute="top" constant="11" id="Ns3-hI-hh9"/>
+                                        <constraint firstItem="m5v-yT-042" firstAttribute="top" secondItem="1cv-YZ-ch0" secondAttribute="bottom" constant="5" id="SUQ-LN-2v9"/>
+                                        <constraint firstItem="m5v-yT-042" firstAttribute="top" secondItem="VU9-Wt-OeS" secondAttribute="bottom" constant="31" id="aHW-RX-S9d"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="1cv-YZ-ch0" secondAttribute="trailing" constant="5" id="d10-LR-TII"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="m5v-yT-042" secondAttribute="bottom" constant="5" id="fkh-s4-BDL"/>
+                                        <constraint firstItem="VU9-Wt-OeS" firstAttribute="leading" secondItem="eb6-LV-mu5" secondAttribute="leading" constant="25" id="vLC-cD-5Hj"/>
+                                        <constraint firstAttribute="trailing" secondItem="VU9-Wt-OeS" secondAttribute="trailing" constant="25" id="wI0-HT-E4l"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="author" destination="m5v-yT-042" id="2Sw-6t-u5y"/>
+                                    <outlet property="hashIdentifier" destination="1cv-YZ-ch0" id="PRm-hm-S1i"/>
+                                    <outlet property="message" destination="VU9-Wt-OeS" id="tbr-HI-GKM"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="EM1-H8-szd" id="W91-Pf-gct"/>
+                            <outlet property="delegate" destination="EM1-H8-szd" id="jNs-eD-wnj"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JwF-CN-wAq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2458" y="97"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="HLJ-4q-auV">
             <objects>
@@ -53,4 +121,9 @@
             <point key="canvasLocation" x="782.60869565217399" y="93.75"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

@@ -6,8 +6,25 @@
 //
 
 #import "GHCommitListTableViewController.h"
+#import "GHCommit.h"
+#import "GHServiceManager.h"
+#import "GHCommitTableViewCell.h"
+
+#define kDefaultNumberOfSections        0
+#define kDefaultPerPageCount            25
 
 @interface GHCommitListTableViewController ()
+
+@property (nonatomic, strong) NSArray <GHCommit *> * commits;
+
+// Holds the reference of service manager
+@property (nonatomic, strong) GHServiceManager * serviceManager;
+
+// Returns activityViewIndicator instance
+@property (nonatomic, strong) UIActivityIndicatorView * activityViewIndicator;
+
+// Holds the boolen value to determine if fetching of commit list is in progress
+@property (nonatomic, assign) BOOL fetchingCommitList;
 
 @end
 
@@ -16,77 +33,76 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.serviceManager = [[GHServiceManager alloc] init];
+    [self setUpNavigationBar];
+    [self setUpActivityIndicator];
+    [self fetchCommitList];
+    self.tableView.estimatedRowHeight = self.tableView.rowHeight;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    NSInteger numberOfSections = kDefaultNumberOfSections;
+    
+    if ([self.commits count] > 0) {
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+        numberOfSections = self.commits.count;
+        self.tableView.backgroundView = nil;
+    }
+    else {
+        
+        // Display no results if no commits are made to the repository
+        if (!self.fetchingCommitList) {
+            UILabel * noDataLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.tableView.bounds.size.width, self.tableView.bounds.size.height)];
+            noDataLabel.text = @"No results";
+            noDataLabel.textAlignment = NSTextAlignmentCenter;
+            self.tableView.backgroundView = noDataLabel;
+            self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        }
+    }
+    
+    return numberOfSections;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    return 1;
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    static NSString * const cellIdentifier = @"cell";
+    GHCommitTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
+    if (!cell) {
+        cell = [[GHCommitTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+    }
+    
+    GHCommit * eachCommit = [self.commits objectAtIndex:indexPath.section];
+    cell.author.text = eachCommit.author;
+    cell.hashIdentifier.text = eachCommit.hashIdentifier;
+    cell.message.text = eachCommit.message;
     
     return cell;
 }
-*/
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+
+#pragma mark -
+
+- (void)setUpNavigationBar {
+    self.navigationItem.title = @"Commits";
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+- (void)setUpActivityIndicator {
+    self.activityViewIndicator = [[UIActivityIndicatorView alloc] init];
+    self.activityViewIndicator.center = self.view.center;
+    self.activityViewIndicator.hidesWhenStopped = YES;
+    [self.tableView addSubview:self.activityViewIndicator];
 }
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+- (void)fetchCommitList {
+
 }
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
